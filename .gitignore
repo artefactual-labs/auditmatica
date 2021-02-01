@@ -1,0 +1,5 @@
+.python-version
+*__pycache__/*
+*.pyc
+auditmatica.egg-info/*
+archivematica_cef.log
