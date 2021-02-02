@@ -1,0 +1,4 @@
+172.19.0.1 - - [13/Jan/2021:19:44:59 +0000] "GET /login/?next=/ HTTP/1.1" 200 3398 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" "-" user=None
+172.19.0.1 - - [13/Jan/2021:19:49:54 +0000] "GET /login/?next=/favicon.ico HTTP/1.1" 200 3409 "http://127.0.0.1:62081/login/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" "-" user=None
+172.19.0.1 - - [13/Jan/2021:19:49:56 +0000] "GET /login/ HTTP/1.1" 200 3397 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" "-" user=None
+172.19.0.1 - - [13/Jan/2021:19:49:57 +0000] "POST /login/ HTTP/1.1" 302 0 "http://127.0.0.1:62081/login/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" "-" user=test

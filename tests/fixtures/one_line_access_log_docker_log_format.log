@@ -1,0 +1,1 @@
+192.1.45.215 - - [11/Feb/2021:22:59:57 +0000] "GET /archival-storage/download/aip/92788701-12ef-4cd3-a12b-71413d9d4d49/mets_download/ HTTP/1.1" 200 187498 "http://test-server.net/archival-storage/92788701-12ef-4cd3-a12b-71413d9d4d49/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" "-"

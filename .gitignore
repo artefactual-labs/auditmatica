@@ -1,5 +1,8 @@
 .python-version
-*__pycache__/*
+*__pycache__/
 *.pyc
-auditmatica.egg-info/*
+auditmatica.egg-info/
 archivematica_cef.log
+.tox/
+build/
+dist/
