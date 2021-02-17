@@ -164,19 +164,25 @@ To override the Storage Service URL to scan for, use `--ss-base-url`. E.g.:
 auditmatica --ss-base-url http://archivematica.example.com:8000
 ```
 
-## Download
+## Install
 
-Download from GitHub:
+### Install auditmatica package
+
+`auditmatica` requires Python 3.6+.
+
+#### Via PyPI
+
+```bash
+pip install auditmatica
+```
+
+#### Manually
+
+Download this repo:
 
 ```bash
 git clone https://github.com/artefactual-labs/auditmatica.git
 ```
-
-## Install
-
-### General
-
-`auditmatica` requires Python 3.6+.
 
 Change into the cloned directory and install:
 
@@ -234,9 +240,13 @@ should look as follows:
 
 ## Development
 
+### Installation
+
 For development, it may be useful to install `auditmatica` with
 `pip install -e .`, which will apply changes made to the source code
 immediately.
+
+### Testing
 
 To run all tests with tox: `tox`
 
@@ -246,6 +256,28 @@ pip install -r requirements/test.txt
 pytest
 ```
 
+### Publishing to PyPI
+
+This repository contains a [Makefile](Makefile) with commands to aid in
+building packages and publishing to [PyPI][pypi].
+
+To check that the package is valid:
+```bash
+make package-check
+```
+
+To upload the package to PyPI (this requires PyPI credentials and being
+listed as a collaborator on the `auditmatica` project):
+```bash
+make package-upload
+```
+
+To clean up package distribution files:
+```bash
+make clean
+```
+
 [am]: https://archivematica.org
 [cef]: https://community.microfocus.com/t5/ArcSight-Connectors/ArcSight-Common-Event-Format-CEF-Implementation-Standard/ta-p/1645557
+[pypi]: https://pypi.org/
 [syslog]: https://tools.ietf.org/html/rfc5424
