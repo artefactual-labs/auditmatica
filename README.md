@@ -203,7 +203,7 @@ environment variables
 ARCHIVEMATICA_DASHBOARD_DASHBOARD_AUDIT_LOG_MIDDLEWARE: "true"
 
 # Storage Service 0.18+
-SS_AUTH_LOG_MIDDLEWARE: "true"
+SS_AUDIT_LOG_MIDDLEWARE: "true"
 ```
 
 2. Restart Archivematica and Storage Service services
