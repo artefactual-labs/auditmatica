@@ -57,6 +57,19 @@ A sample CEF event written by `auditmatica` looks like the following:
 CEF:0|Artefactual Systems, Inc.|Archivematica|hosted|16|AIP downloaded from Archival Storage|3|cs1Label=requestClientApplication cs1="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" rt=Jan 13 2021 20:01:33 requestMethod=GET request=/archival-storage/download/aip/8fa54cfc-f5c5-4673-b44e-fc514496bad7/ src=172.19.0.1 suser=test msg=UUID:8fa54cfc-f5c5-4673-b44e-fc514496bad7
 ```
 
+In addition to the required CEF fields, each CEF event produced by `auditmatica` also has the following extensions:
+
+| Field | Value | Mandatory? |
+| ----- | ----- | ---------- |
+| `cs1Label` | `requestClientApplication` | True |
+| `cs1` | User agent string | True |
+| `rt` | Request time | True |
+| `requestMethod` | Request HTTP method | True |
+| `request` | Request URL | True |
+| `src` | Requester IP address | True |
+| `suser` | Authenticated username | False - present only if usernames are configured in nginx log and there is a username associated with the event's log line |
+| `msg` | `UUID:<uuid from request URL>` | False - present only if there is a UUID associated with the event |
+
 For a comprehensive list of Archivematica CEF events, see
 [IMPLEMENTATION.md](IMPLEMENTATION.md).
 
