@@ -48,23 +48,20 @@ def test_cef_integration_write_cef_to_file():
         assert file_sha256_hash(TEST_OUTPUT) == file_sha256_hash(CEF_LOG)
 
 
-def test_cef_integration_write_cef_to_syslog():
+def test_cef_integration_write_cef_to_syslog(caplog):
     """Test integration writing CEF events to syslog."""
     ONE_LINE_ACCESS_LOG = os.path.join(
         FIXTURES_PATH, "one_line_access_log_with_user.log"
     )
-    SYSLOG = "/var/log/syslog"
     CEF_TEST_STRING = "CEF:0|Artefactual Systems, Inc.|Archivematica|hosted|9|Transfer downloaded from backlog|3"
     runner = CliRunner()
+    caplog.clear()
     with runner.isolated_filesystem():
         result = runner.invoke(
             click_main_fn, ["write-cef", "--syslog", ONE_LINE_ACCESS_LOG]
         )
         assert result.exit_code == 0
-        assert os.path.exists(SYSLOG)
-        with open(SYSLOG) as log_file:
-            log_contents = log_file.readlines()
-            last_line = log_contents[-1:]
+        last_line = [r.message for r in caplog.records][-1:]
         assert CEF_TEST_STRING in str(last_line)
 
 
